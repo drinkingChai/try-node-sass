@@ -1,0 +1,60 @@
+@import "colors.scss";
+
+
+.stuff {
+	&-container {
+		// any class named stuff-container
+		// useful for showing relations
+		// such as btn, btn-blue
+		// design one btn class and name sub-classes here
+	}
+
+	&ed-socks {
+		// any class named stuffed-socks
+		// prob not intended use
+		background-color: $teal;
+	}
+
+	&-red {
+		background-color: $red;
+	}
+
+	&-red, &-ed-socks {
+		text-align: center;
+	}
+
+
+	h1 {
+
+		color: $purple;
+		transition: color 0.8s ease-out;
+
+		// apply something to h1 "when" it hovers?
+		// &:hover & { color: $aqua }
+
+		&:hover {
+			color: $aqua;
+		}
+
+		&::before {
+			display: block;
+			font-size: 10px;
+			color: $gray;
+			content: "Wasif's test website!";
+
+			// 4 levels deep! bad!
+			// &:hover { color: $black; }
+		}
+
+		// better..
+		&::before:hover { color: $gray; }
+
+	}
+
+	nav {
+
+		figure {
+
+		}
+	}
+}

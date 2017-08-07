@@ -1,0 +1,21 @@
+.stuffed-socks {
+  background-color: #39CCCC; }
+
+.stuff-red {
+  background-color: #FF4136; }
+
+.stuff-red, .stuff-ed-socks {
+  text-align: center; }
+
+.stuff h1 {
+  color: #B10DC9;
+  transition: color 0.8s ease-out; }
+  .stuff h1:hover {
+    color: #7FDBFF; }
+  .stuff h1::before {
+    display: block;
+    font-size: 10px;
+    color: #AAAAAA;
+    content: "Wasif's test website!"; }
+  .stuff h1::before:hover {
+    color: #AAAAAA; }
