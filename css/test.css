@@ -1,5 +1,18 @@
+.crazy-socks-drawer {
+  background-color: #01FF70; }
+
+.sock-prince {
+  background-color: #8e9def; }
+
+.sock-prince-comp {
+  background-color: #efe08e; }
+
+.sock-less-opaque {
+  background-color: rgba(142, 157, 239, 0.7); }
+
 .stuffed-socks {
-  background-color: #39CCCC; }
+  background-color: #39CCCC;
+  padding: 15px; }
 
 .stuff-red {
   background-color: #FF4136; }

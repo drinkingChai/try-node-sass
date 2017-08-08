@@ -1,5 +1,34 @@
 @import "colors.scss";
 
+$socks: crazy-socks;
+$sock: sock;
+
+.#{$socks}-drawer {
+	// interpolation...
+	// only works with classes, doesn't work with Ids or tags?
+	background-color: $lime;
+}
+
+// first param: base color
+// second param: mix color
+// third param: set % of the base color, default 50%
+$purpleAqua: mix($purple, $aqua, 30%);
+
+// complement
+$cpa: complement($purpleAqua);
+
+.#{$sock}-prince {
+	background-color: $purpleAqua;
+}
+
+.#{$sock}-prince-comp {
+	background-color: $cpa;
+}
+
+.#{$sock}-less-opaque {
+	// decreases the opacity by 0.3
+	background-color: transparentize($purpleAqua, .3);
+}
 
 .stuff {
 	&-container {
@@ -13,6 +42,7 @@
 		// any class named stuffed-socks
 		// prob not intended use
 		background-color: $teal;
+		padding: 15px;
 	}
 
 	&-red {
