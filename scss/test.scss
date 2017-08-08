@@ -30,12 +30,12 @@ $cpa: complement($purpleAqua);
 	background-color: $bg-color;
 
 	// single content block?
-	.rocks { @content; }
+	@content;
 }
 
 @mixin media-query($screen-width) {
-	@media screen and (max-width: $screen-width) {
-		.rocks { @content; }
+	@media only screen and (max-width: $screen-width) {
+		@content;
 	}
 }
 
@@ -47,9 +47,18 @@ $cpa: complement($purpleAqua);
 .#{$sock}-prince-comp {
 	@include make-sock($cpa) {
 		// targets the content block
-		background-color: $black;
-		color: $gray;
+		.rocks {
+			background-color: $black;
+			color: $gray;
+		}
+		.sticks {
+			background-color: mix($purple, $yellow);
+		}
 	};
+
+	@include media-query(800px) {
+		.sticks { height: 50px; }
+	}
 }
 
 .#{$sock}-less-opaque {
@@ -59,7 +68,7 @@ $cpa: complement($purpleAqua);
 	};
 
 	@include media-query(800px) {
- 		display: none;
+		.rocks { display: none; }
 	};
 }
 

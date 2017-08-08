@@ -16,12 +16,16 @@
   .sock-prince-comp .rocks {
     background-color: #111111;
     color: #AAAAAA; }
+  .sock-prince-comp .sticks {
+    background-color: #d87565; }
+  @media only screen and (max-width: 800px) {
+    .sock-prince-comp .sticks {
+      height: 50px; } }
 
 .sock-less-opaque {
-  background-color: rgba(142, 157, 239, 0.7); }
-  .sock-less-opaque .rocks {
-    background-color: #B10DC9; }
-  @media screen and (min-width: 800px) {
+  background-color: rgba(142, 157, 239, 0.7);
+  background-color: #B10DC9; }
+  @media only screen and (max-width: 800px) {
     .sock-less-opaque .rocks {
       display: none; } }
 
