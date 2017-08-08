@@ -7,6 +7,7 @@ $sock: sock;
 	// interpolation...
 	// only works with classes, doesn't work with Ids or tags?
 	background-color: $lime;
+	background-image: url('../crissxcross.png');
 }
 
 // first param: base color
@@ -17,17 +18,56 @@ $purpleAqua: mix($purple, $aqua, 30%);
 // complement
 $cpa: complement($purpleAqua);
 
+// mixin - class
+.sock {
+	font-size: 18px;
+	font-style: italic;
+	text-align: center;
+	padding: 5px;
+}
+
+@mixin make-sock($bg-color: $purpleAqua) {
+	background-color: $bg-color;
+
+	// single content block?
+	.rocks { @content; }
+}
+
+@mixin media-query($screen-width) {
+	@media screen and (max-width: $screen-width) {
+		.rocks { @content; }
+	}
+}
+
 .#{$sock}-prince {
-	background-color: $purpleAqua;
+	@include make-sock;
+	// background-color: $purpleAqua;
 }
 
 .#{$sock}-prince-comp {
-	background-color: $cpa;
+	@include make-sock($cpa) {
+		// targets the content block
+		background-color: $black;
+		color: $gray;
+	};
 }
 
 .#{$sock}-less-opaque {
 	// decreases the opacity by 0.3
-	background-color: transparentize($purpleAqua, .3);
+	@include make-sock(transparentize($purpleAqua, .3)) {
+		background-color: $purple;
+	};
+
+	@include media-query(800px) {
+ 		display: none;
+	};
+}
+
+.#{$sock}-scaled {
+	// change the properties of a color!
+	// can't have RGB and SLA at the same time
+	// [$red], [$green], [$blue], [$saturation], [$lightness], [$alpha]
+	@include make-sock(scale-color($purpleAqua, $saturation: 30%, $alpha: -50%));
 }
 
 .stuff {

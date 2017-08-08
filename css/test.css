@@ -1,14 +1,32 @@
 .crazy-socks-drawer {
-  background-color: #01FF70; }
+  background-color: #01FF70;
+  background-image: url("../crissxcross.png"); }
+
+.sock {
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+  padding: 5px; }
 
 .sock-prince {
   background-color: #8e9def; }
 
 .sock-prince-comp {
   background-color: #efe08e; }
+  .sock-prince-comp .rocks {
+    background-color: #111111;
+    color: #AAAAAA; }
 
 .sock-less-opaque {
   background-color: rgba(142, 157, 239, 0.7); }
+  .sock-less-opaque .rocks {
+    background-color: #B10DC9; }
+  @media screen and (min-width: 800px) {
+    .sock-less-opaque .rocks {
+      display: none; } }
+
+.sock-scaled {
+  background-color: rgba(137, 154, 244, 0.5); }
 
 .stuffed-socks {
   background-color: #39CCCC;
